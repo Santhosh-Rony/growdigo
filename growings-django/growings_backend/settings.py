@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ['*'] if DEBUG else [
     '127.0.0.1',
     '0.0.0.0',
     '.onrender.com',  # Allow all Render subdomains
-    'growdigo-backend.onrender.com',  # Your specific Render domain
+    'growdigo.onrender.com',  # specific Render domain
 ]
 
 # Application definition
