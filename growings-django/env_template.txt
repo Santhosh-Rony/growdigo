@@ -1,0 +1,21 @@
+# Django Settings
+SECRET_KEY=your-secret-key-here
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1,.render.com
+
+# Database Settings (for local development)
+DB_NAME=growdigo_db
+DB_USER=santhoshchodipilli
+DB_PASSWORD=your-db-password
+DB_HOST=localhost
+DB_PORT=5432
+
+# For production, Render will provide DATABASE_URL automatically
+
+# CORS Settings
+CORS_ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
+
+# Razorpay Settings
+RAZORPAY_KEY_ID=rzp_test_PvTCqgAGmEk7Dv
+RAZORPAY_KEY_SECRET=GXsRXrOts6ELEC4jtuxKEZeN
+RAZORPAY_REGISTRATION_AMOUNT=49900 
