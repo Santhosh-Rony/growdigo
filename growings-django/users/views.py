@@ -122,12 +122,19 @@ def logout_user(request):
     }, status=status.HTTP_200_OK)
 
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])  # Changed from IsAuthenticated to AllowAny
 def validate_session(request):
     """
     Validate if the current session is still valid.
     Returns user info if valid, 401 if invalid.
     """
+    # Check if user is authenticated
+    if not request.user.is_authenticated:
+        return Response({
+            'message': 'Session invalid',
+            'error': 'not_authenticated'
+        }, status=status.HTTP_401_UNAUTHORIZED)
+    
     return Response({
         'message': 'Session valid',
         'user': {
