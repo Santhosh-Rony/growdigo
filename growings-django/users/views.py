@@ -119,4 +119,20 @@ def logout_user(request):
     logout(request)
     return Response({
         'message': 'Logout successful'
+    }, status=status.HTTP_200_OK)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def validate_session(request):
+    """
+    Validate if the current session is still valid.
+    Returns user info if valid, 401 if invalid.
+    """
+    return Response({
+        'message': 'Session valid',
+        'user': {
+            'id': request.user.id,
+            'name': request.user.name,
+            'email': request.user.email
+        }
     }, status=status.HTTP_200_OK) 

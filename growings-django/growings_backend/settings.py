@@ -206,7 +206,7 @@ REST_FRAMEWORK = {
 # Razorpay settings
 RAZORPAY_KEY_ID = config('RAZORPAY_KEY_ID', default='rzp_test_PvTCqgAGmEk7Dv')
 RAZORPAY_KEY_SECRET = config('RAZORPAY_KEY_SECRET', default='GXsRXrOts6ELEC4jtuxKEZeN')
-RAZORPAY_REGISTRATION_AMOUNT = config('RAZORPAY_REGISTRATION_AMOUNT', default=49900, cast=int)  # Amount in paise (₹499)
+RAZORPAY_REGISTRATION_AMOUNT = config('RAZORPAY_REGISTRATION_AMOUNT', default=19900, cast=int)  # Amount in paise (₹199)
 
 # Security settings for production
 if not DEBUG:
