@@ -97,6 +97,7 @@ def login_user(request):
     if user is not None:
         # Log the user in to create a session
         login(request, user)
+        print(f"Session created for user: {user.email}, Session key: {request.session.session_key}")
         return Response({
             'message': 'Login successful',
             'user': {
@@ -128,13 +129,19 @@ def validate_session(request):
     Validate if the current session is still valid.
     Returns user info if valid, 401 if invalid.
     """
+    print(f"Session validation - User authenticated: {request.user.is_authenticated}")
+    print(f"Session key: {request.session.session_key}")
+    print(f"User: {request.user}")
+    
     # Check if user is authenticated
     if not request.user.is_authenticated:
+        print("❌ User not authenticated - returning 401")
         return Response({
             'message': 'Session invalid',
             'error': 'not_authenticated'
         }, status=status.HTTP_401_UNAUTHORIZED)
     
+    print(f"✅ Session valid for user: {request.user.email}")
     return Response({
         'message': 'Session valid',
         'user': {

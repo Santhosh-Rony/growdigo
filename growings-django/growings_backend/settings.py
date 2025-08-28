@@ -167,6 +167,16 @@ CORS_ALLOWED_ORIGINS = [
 
 CORS_ALLOW_CREDENTIALS = True
 
+# Session cookie settings for cross-origin
+SESSION_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SECURE = True  # Required for SameSite=None
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_AGE = 86400  # 24 hours
+
+# CSRF cookie settings for cross-origin
+CSRF_COOKIE_SAMESITE = 'None'
+CSRF_COOKIE_SECURE = True
+
 # Additional CORS settings for development
 if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
@@ -216,8 +226,7 @@ if not DEBUG:
     SECURE_HSTS_SECONDS = 31536000
     SECURE_REDIRECT_EXEMPT = []
     SECURE_SSL_REDIRECT = True
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True 
+    # SESSION_COOKIE_SECURE and CSRF_COOKIE_SECURE are set above for cross-origin 
 
 # Logging configuration
 LOGGING = {
