@@ -159,8 +159,8 @@ AUTH_USER_MODEL = 'users.User'
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "https://www.growdigo.com",
-    "https://growdigo.com",
+    "https://www.growdigo.in",
+    "https://growdigo.in",
     "https://growdigo.netlify.app",
 ]
 
@@ -203,8 +203,8 @@ REST_FRAMEWORK = {
 }
 
 # Razorpay settings
-RAZORPAY_KEY_ID = config('RAZORPAY_KEY_ID', default='rzp_test_PvTCqgAGmEk7Dv')
-RAZORPAY_KEY_SECRET = config('RAZORPAY_KEY_SECRET', default='GXsRXrOts6ELEC4jtuxKEZeN')
+RAZORPAY_KEY_ID = config('RAZORPAY_KEY_ID', default='')
+RAZORPAY_KEY_SECRET = config('RAZORPAY_KEY_SECRET', default='')
 RAZORPAY_REGISTRATION_AMOUNT = config('RAZORPAY_REGISTRATION_AMOUNT', default=19900, cast=int)  # Amount in paise (₹199)
 
 # Security settings for production
